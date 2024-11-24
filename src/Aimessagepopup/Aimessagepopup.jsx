@@ -46,7 +46,7 @@ function AiMessagePopup({ closePopup, setAiMessage }) {
 
     try {
       // API 요청
-      const response = await fetch('http://localhost:8080/api/generate-message', {
+      const response = await fetch('http://13.239.36.154:8080/api/generate-message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ function AiMessagePopup({ closePopup, setAiMessage }) {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/api/createImage', {
+      const response = await fetch('http://13.239.36.154:8080/api/createImage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -127,8 +127,8 @@ function AiMessagePopup({ closePopup, setAiMessage }) {
 
       const data = await response.json();
       const imageUrls = data.map(url => {
-        const imageName = url.split('\\').pop();
-        return `http://localhost:8080/api/images/${imageName}`;
+        const imageName = url.split('/').pop();
+        return `http://13.239.36.154:8080/app/${imageName}`;
       });
 
       setGeneratedImages(imageUrls);
@@ -167,7 +167,7 @@ function AiMessagePopup({ closePopup, setAiMessage }) {
     };
   
     try {
-      const response = await fetch('http://localhost:8080/api/createGIF', {
+      const response = await fetch('http://13.239.36.154:8080/api/createGIF', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -235,7 +235,7 @@ function AiMessagePopup({ closePopup, setAiMessage }) {
   return (
     <div className="popup-container">
       <div className="popup-header">
-        <span onClick={() => closePopup()}>X 닫기</span>
+        <span onClick={() => closePopup()}>X</span>
         <span className={activeTab === 'text' ? 'active' : ''} onClick={() => setActiveTab('text')}>
           AI 문자 생성
         </span>

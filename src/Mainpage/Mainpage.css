@@ -1,14 +1,44 @@
+body {
+  background-image: url('..\\background2.jpg'); /* 배경 이미지 경로 */
+  background-size: cover; /* 배경 이미지를 화면에 맞게 조정 */
+  background-position: center; /* 배경 이미지 중심 정렬 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+  background-attachment: fixed; /* 배경이 스크롤되지 않도록 고정 */
+  margin: 0; /* 여백 제거 */
+  padding: 0; /* 여백 제거 */
+  font-family: Arial, sans-serif; /* 기본 폰트 설정 (필요에 따라 조정) */
+}
+
+
 .main-container {
   background-color: #f0f0f0;
   /* 상단바 배경 색상 */
   padding: 10px;
   /* 상단바의 패딩 */
+  background-image: url('..\\background2.jpg'); /* 배경 이미지 경로 */
+  background-size: cover; /* 배경 이미지를 화면에 맞게 조정 */
+  background-position: center; /* 배경 이미지 중심 정렬 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+  background-attachment: fixed; /* 배경이 스크롤되지 않도록 고정 */
+  margin: 0; /* 여백 제거 */
+  padding: 0; /* 여백 제거 */
+  font-family: Arial, sans-serif; /* 기본 폰트 설정 (필요에 따라 조정) */
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background-image: url('..\\background2.jpg'); /* 배경 이미지 경로 */
+  background-size: cover; /* 배경 이미지를 화면에 맞게 조정 */
+  background-position: center; /* 배경 이미지 중심 정렬 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+  background-attachment: fixed; /* 배경이 스크롤되지 않도록 고정 */
+  margin: 0; /* 여백 제거 */
+  padding: 0; /* 여백 제거 */
+  font-family: Arial, sans-serif; /* 기본 폰트 설정 (필요에 따라 조정) */
+  
 }
 
 .user-options span {
@@ -104,11 +134,15 @@ button {
   /* 버튼 모서리 둥글게 */
   cursor: pointer;
   /* 마우스 포인터 커서 변경 */
+  position: relative; /* 애니메이션 시 기준점 고정 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
   /* 버튼 호버 시 색상 변경 */
+  transform: translateY(-3px); /* 마우스를 올릴 때 위로 살짝 이동 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
 }
 
 .notice-section {
