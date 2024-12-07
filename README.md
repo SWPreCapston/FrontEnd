@@ -17,16 +17,17 @@
 ## 👉🏻 실행 방법
 1. vscode에 FrontEnd 폴더 불러오기
 2. vscode에서 터미널 켜기
-3. 빌드 명령어: npm run build
-4. git bash에서 AWS로 빌드폴더 보내기 : scp -r -i ${본인 ec2 키 경로} ${ec2에 보낼 파일의 경로} ec2-user@13.239.36.154:/home/ec2-user/app
+3. npm install 명령어
+4. 빌드 명령어: npm run build
+5. git bash에서 AWS로 빌드폴더 보내기 : scp -r -i ${본인 ec2 키 경로} ${ec2에 보낼 파일의 경로} ec2-user@13.239.36.154:/home/ec2-user/app
 <br/>예시: scp -i "D:\24-2\SWFreeCapston_8\private_key_woojj1254577.pem" "D:\24-2\SWFreeCapston_8\Back\precapston\build\libs\precapston-0.0.1-SNAPSHOT.jar" ec2-user@13.239.36.154:/home/ec2-user/app<br/>(4번 명령어는 내 노트북 말고 다른 곳에서 쓰려면 scp -r -i 다음에 pem key 경로, build 파일 경로, ec2 어디에 보낼건지 경로 적어주면 됩니다.)
-5. EC2 접속하기(putty, git bash) -> ssh -i ${pem 키 경로}ec2-user@${public ip 주소}
-6. 접속하면 처음 위치: /home/ec2-user
-7. app 디렉토리로 이동: cd app
-8.  프론트 실행 전: pm2 kill
-9. 프론트 실행: pm2 serve build/ 3000 --spa
-10. 백 실행(실행 방법은 BackEnd의 README.md에 있음)
-11. 웹에서 13.239.36.154:3000 접속하여 서비스 확인
+6. EC2 접속하기(putty, git bash) -> ssh -i ${pem 키 경로}ec2-user@${public ip 주소}
+7. 접속하면 처음 위치: /home/ec2-user
+8. app 디렉토리로 이동: cd app
+9.  프론트 실행 전: pm2 kill
+10. 프론트 실행: pm2 serve build/ 3000 --spa
+11. 백 실행(실행 방법은 BackEnd의 README.md에 있음)
+12. 웹에서 13.239.36.154:3000 접속하여 서비스 확인
 ### 이 후로는 종료 과정
 12. 프론트 종료: pm2 kill
  
